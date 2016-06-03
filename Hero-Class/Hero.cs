@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hero_Class
 {
-    class Program
+    class Hero
     {
-        static void Main(string[] args)
-        {
 
-        }
     }
 }
