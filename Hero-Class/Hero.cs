@@ -13,7 +13,7 @@ using System.Threading.Tasks;
  * Program Description: This is the Hero Class, contains several different methods there in to generate the hero's abilities,
  * generate the hero's hit chance against a target, hitDamage against the target, as well as allows the player or user to name their hero. 
  * 
- * version 0.2 - Added proper descriptions to the Hero Class
+ * Version 0.3 - Corrected the fight method
  */
 
 
@@ -118,7 +118,7 @@ namespace Hero_Class
             }
             else
             {
-                Console.WriteLine("You missed...better luck next time! =("); // on a miss, prints result and terminates
+                Console.WriteLine("You missed! Better luck next time! =("); // on a miss, prints result and terminates
             }
         }
 
@@ -128,7 +128,7 @@ namespace Hero_Class
         {
             int potentialDmg, damageBoost, dmgDealt; 
             Random rnd = new Random();
-            potentialDmg = rnd.Next(6) + 1; //The hero's potential damage is a number between 1 and 6 this number will then be multiplied by the hero's strength 
+            potentialDmg = rnd.Next(6)  1; //The hero's potential damage is a number between 1 and 6 this number will then be multiplied by the hero's strength 
             damageBoost = this.Strength; // multiplies damage with hero strength
             dmgDealt = potentialDmg * damageBoost; 
             Console.WriteLine("You damage is {0}\nYou dealt {1} damage!", potentialDmg, dmgDealt);
@@ -138,7 +138,7 @@ namespace Hero_Class
 
         /**PUBLIC METHODS
          * 
-         * @methods 
+         * @methods: fight method; show method 
          */
 
         // method to start a fight
