@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,7 @@ namespace Hero_Class
     class Hero
     {
         /**
+         * PRIVATE INSTANCE VARIABLES
          * <summary> Creating Private Properties </summary>
          *
          */
@@ -32,6 +34,7 @@ namespace Hero_Class
                 private string _name;
 
         /**
+         * PUBLIC PROPERTIES
          * <summary> Creating Public Properties </summary>
          * 
          * @assigns _strength as a value
@@ -97,16 +100,17 @@ namespace Hero_Class
             this.Health = stats.Next(1, 101);  //health can be an integer ranging between 1 - 100
         }
         /**
-         *  hit Attempt Method: This will determine the success of the attack
          *  
+         *  @method _hitAttempt
+         *  @description: Uses a random number generator to determine the hero's hitChance towards its target
          */
-
-        private void _hitAttempt()
+         
+        private void _hitAttempt()  //hit Attempt Method: This will determine the success of the attack
         {
             Random rnd = new Random();
             int hitChance = rnd.Next(1, 101); // generates random int between 1 and 100
             Console.WriteLine("Your hit chance is {0}", hitChance);
-            if (hitChance > 80) //Player hits with 20% accuracy
+            if (hitChance > 80) //Player hits with 20% accuracy - this rule was defined in the requirements
             {
                 
                 Console.WriteLine("You landed a hit!, Great Job!"); // Here the _hitAttempt = true, so the _damage method is called
@@ -119,7 +123,7 @@ namespace Hero_Class
         }
 
         // _hitDamage to determine the damage, that the hero can dish out
-        //  created three local variables to handle smaller things, potientialDmg (hero's potential damage 1-6), damageBoost is a number multiplied by the hero's strength
+        // created three local variables to handle smaller things, potientialDmg (hero's potential damage 1-6), damageBoost is a number multiplied by the hero's strength, & damage dealt = player damage
         private int _hitDamage()
         {
             int potentialDmg, damageBoost, dmgDealt; 
@@ -132,7 +136,10 @@ namespace Hero_Class
            
         }
 
-        /***|PUBLIC METHODS|***/
+        /**PUBLIC METHODS
+         * 
+         * @methods 
+         */
 
         // method to start a fight
         public void fight()
