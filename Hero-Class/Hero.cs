@@ -12,7 +12,7 @@ using System.Threading.Tasks;
  * Program Description: This is the Hero Class, contains several different methods there in to generate the hero's abilities,
  * generate the hero's hit chance against a target, hitDamage against the target, as well as allows the player or user to name their hero. 
  * 
- * version 0.1 - Built the Hero class, & fixed spelling errors 
+ * version 0.2 - Added proper descriptions to the Hero Class
  */
 
 
@@ -23,9 +23,7 @@ namespace Hero_Class
     {
         /**
          * <summary> Creating Private Properties </summary>
-         * 
-         * 
-         * 
+         *
          */
 
                 private int _strength;
@@ -39,24 +37,26 @@ namespace Hero_Class
          * @assigns _strength as a value
          */
 
-        public int Strength
+        //Adjusting the _strength private variable to a public property through get and sets
+        public int Strength 
         {
             get { return this._strength; }
             set { this._strength = value; }
         }
 
-        public int Speed
+        //Adjusting the _speed private variable to a public property through get and sets
+        public int Speed                
         {
             get { return this._speed; }
             set { this._speed = value; }
         }
-
+        //Adjusting the _health private variable to a public property through get and sets
         public int Health
         {
             get { return this._health; }
             set { this._health = value; }
         }
-
+        //Adjusting the _name private variable to a public property through get and sets
         public string Name
         {
             get { return this._name; }
@@ -64,19 +64,23 @@ namespace Hero_Class
         }
         
         /**
-         * Description: This is the hero constructor for the hero class takes a string param in the 
+         * Description: This is the hero constructor for the hero class takes a string param in the constructor
          * @Constructor Hero
+         * @param {string name}
          */
-         
+
+
+         //Making the stats into local variables, except for name, so they can be easily accessible
         public Hero(string name) 
         {
-            this.Name = name; /* Declared that the private _name, is associated with "name",
-             //                     which is a public property */
-            int strength;
+            int strength; 
             int speed;
             int health;
-
-            this.Strength = Strength;
+                            
+            this.Name = name;        /* Declared that the private _name, is associated with "name",
+                                     which is a public property 
+                                      */
+            this.Strength = Strength; //Redefining the strength property
             this.Speed = Speed;
             this.Health = Health;
            
@@ -114,14 +118,15 @@ namespace Hero_Class
             }
         }
 
-        // _hitDethod to determine the damage, that the hero can dish out
+        // _hitDamage to determine the damage, that the hero can dish out
+        //  created three local variables to handle smaller things, potientialDmg (hero's potential damage 1-6), damageBoost is a number multiplied by the hero's strength
         private int _hitDamage()
         {
-            int potentialDmg, damageBoost, dmgDealt;
+            int potentialDmg, damageBoost, dmgDealt; 
             Random rnd = new Random();
-            potentialDmg = rnd.Next(6) + 1; //The hero's potential damage is a number between 1 and 6 this number will then be multiplied by the heo's strength 
-            damageBoost = this.Strength; //
-            dmgDealt = potentialDmg * damageBoost; // multiplies damage with hero strength
+            potentialDmg = rnd.Next(6) + 1; //The hero's potential damage is a number between 1 and 6 this number will then be multiplied by the hero's strength 
+            damageBoost = this.Strength; // multiplies damage with hero strength
+            dmgDealt = potentialDmg * damageBoost; 
             Console.WriteLine("You damage is {0}\nYou dealt {1} damage!", potentialDmg, dmgDealt);
             return dmgDealt; //sends final damage result with modifiers
            
@@ -134,7 +139,6 @@ namespace Hero_Class
         {
             _hitAttempt(); //calls hitAttempt method
         }
-
         public void show() // method to show character's current stats
         {
             Console.WriteLine("{0}'s Stats\nStrength  Speed  Health \n========  =====  ======\n{1, 6}{2, 8}{3, 8}", this.Name, this.Strength, this.Speed, this.Health); // displays stats with some visual fluff

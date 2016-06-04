@@ -16,6 +16,7 @@ namespace Hero_Class
      * @This class is the "driver" class for the program
      * 
      * @class Program
+     *version 0.2 - Built the Hero class, & fixed spelling errors 
      */
 
     public class Program
