@@ -128,7 +128,7 @@ namespace Hero_Class
         {
             int potentialDmg, damageBoost, dmgDealt; 
             Random rnd = new Random();
-            potentialDmg = rnd.Next(6)  1; //The hero's potential damage is a number between 1 and 6 this number will then be multiplied by the hero's strength 
+            potentialDmg = rnd.Next(6) + 1; //The hero's potential damage is a number between 1 and 6 this number will then be multiplied by the hero's strength 
             damageBoost = this.Strength; // multiplies damage with hero strength
             dmgDealt = potentialDmg * damageBoost; 
             Console.WriteLine("You damage is {0}\nYou dealt {1} damage!", potentialDmg, dmgDealt);
