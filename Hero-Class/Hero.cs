@@ -13,7 +13,7 @@ using System.Threading.Tasks;
  * Program Description: This is the Hero Class, contains several different methods there in to generate the hero's abilities,
  * generate the hero's hit chance against a target, hitDamage against the target, as well as allows the player or user to name their hero. 
  * 
- * Version 0.3 - Corrected the fight method
+ * Version 0.4 - Corrected the Public method "Show"
  */
 
 
@@ -133,7 +133,6 @@ namespace Hero_Class
             dmgDealt = potentialDmg * damageBoost; 
             Console.WriteLine("You damage is {0}\nYou dealt {1} damage!", potentialDmg, dmgDealt);
             return dmgDealt; //sends final damage result with modifiers
-           
         }
 
         /**PUBLIC METHODS
@@ -148,7 +147,7 @@ namespace Hero_Class
         }
         public void show() // method to show character's current stats
         {
-            Console.WriteLine("{0}'s Stats\nStrength  Speed  Health \n========  =====  ======\n{1, 6}{2, 8}{3, 8}", this.Name, this.Strength, this.Speed, this.Health); // displays stats with some visual fluff
+            Console.WriteLine("{0}'s Stats\nStrength  Speed  Health \n========  =====  ======\n{1, 6}{2, 8}{3, 8}", this.Name, this.Strength, this.Speed, this.Health); // Shows hero's stats, it's better to call this before calling the fight method
         }
     }
 }
